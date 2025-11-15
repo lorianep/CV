@@ -8,290 +8,248 @@
     
     <style>
         :root {
-            --primary-color: #00bcd4; /* Bleu Cyan vif (Tech/Moderne) */
+            --primary-color: #007bff; /* Bleu plus profond, sobre et professionnel */
+            --secondary-color: #f0f8ff; /* Bleu très clair pour le fond du bandeau */
             --text-color: #333;
-            --secondary-color: #607d8b; /* Gris-bleu pour les détails */
-            --light-bg: #f5f5f5;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --light-text-color: #666;
+            --header-text-color: #fff;
+            --font-main: 'Roboto', sans-serif; /* Police moderne et lisible */
+            --font-alt: 'Open Sans', sans-serif;
         }
+
+        /* Import de polices Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap');
 
         body {
             font-family: var(--font-main);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
             margin: 0;
-            padding: 20px;
-            background-color: var(--light-bg); 
+            padding: 0; /* Padding retiré pour un meilleur contrôle du cadre */
+            background-color: #f0f2f5; /* Fond clair pour un contraste doux */
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .cv-page {
-            width: 100%;
-            max-width: 900px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            padding: 40px;
-            background: white;
-            border-radius: 8px;
+        .cv-container {
+            display: flex;
+            width: 21cm; /* Format A4 */
+            height: 29.7cm; /* Format A4 */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+            position: relative; /* Pour le positionnement absolu des éléments */
         }
 
-        /* EN-TÊTE */
-        header {
+        /* BANDEAU LATÉRAL GAUCHE */
+        .sidebar {
+            width: 35%; /* La colonne latérale occupe 35% de la largeur */
             background-color: var(--primary-color);
-            color: white;
-            padding: 25px 30px;
-            margin: -40px -40px 30px -40px; 
+            color: var(--header-text-color);
+            padding: 30px 25px;
+            box-sizing: border-box; /* Padding inclus dans la largeur */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
         }
 
-        header h1 {
-            margin: 0 0 5px 0;
-            font-size: 2.5em;
+        .sidebar h1 {
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 2.2em;
+            margin-bottom: 5px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
         }
 
-        header p {
-            margin: 0;
+        .sidebar h2 {
+            font-family: var(--font-main);
+            font-weight: 400;
             font-size: 1.1em;
-            font-weight: 300;
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        /* TITRES DE SECTION */
-        h2 {
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 5px;
+        .sidebar h3 { /* Titres de section dans la sidebar */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
             margin-top: 35px;
             margin-bottom: 15px;
-            color: var(--secondary-color);
-            font-size: 1.6em;
-            font-weight: 500;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--header-text-color);
+            width: 100%;
         }
 
-        /* CONTACTS */
-        .contact-details a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-right: 15px;
-            display: inline-flex;
-            align-items: center;
+        .sidebar .contact-info,
+        .sidebar .skills-list,
+        .sidebar .languages {
+            width: 100%;
+            text-align: left; /* Aligner le texte à gauche pour les listes */
+        }
+
+        .sidebar .contact-info p,
+        .sidebar .languages p {
+            margin-bottom: 8px;
             font-size: 0.95em;
+            display: flex;
+            align-items: center;
         }
-        .contact-details i {
-            color: var(--primary-color);
-            margin-right: 5px;
+        .sidebar .contact-info i,
+        .sidebar .languages i {
+            margin-right: 10px;
+            color: var(--secondary-color); /* Couleur claire pour les icônes */
+            font-size: 1.1em;
+        }
+        .sidebar .contact-info a {
+            color: var(--header-text-color);
+            text-decoration: none;
+            word-break: break-all; /* Pour éviter que les longues URLs ne débordent */
+        }
+        .sidebar .contact-info a:hover {
+            text-decoration: underline;
         }
 
-        /* EXPERIENCES ET FORMATION */
-        .item-block {
-            margin-bottom: 25px;
+        .sidebar .skills-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .sidebar .skills-list li {
+            background-color: rgba(255, 255, 255, 0.1); /* Légèrement transparent */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            margin-bottom: 8px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block; /* Pour un affichage en tags */
+            margin-right: 5px;
+            white-space: nowrap;
+        }
+        .sidebar .skills-list li strong {
+            color: var(--secondary-color);
+        }
+
+        /* CONTENU PRINCIPAL DROIT */
+        .main-content {
+            width: 65%; /* Le contenu principal occupe 65% */
+            padding: 30px 40px;
+            box-sizing: border-box;
+            background-color: white;
+            overflow: hidden; /* Pour gérer le contenu qui dépasse */
+        }
+
+        .main-content h2 { /* Titres de section dans le contenu principal */
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        .main-content h2 i {
+            margin-right: 10px;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        /* Expériences / Formations */
+        .experience-item, .education-item {
+            margin-bottom: 20px;
         }
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .item-title {
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 600;
+            font-size: 1.05em;
             color: var(--text-color);
         }
-        .item-company {
-            font-style: italic;
+        .item-company, .item-establishment {
             font-size: 0.95em;
-            color: var(--secondary-color);
+            color: var(--light-text-color);
+            margin-bottom: 5px;
         }
         .item-date {
             font-style: italic;
-            font-size: 0.9em;
-            color: #777;
+            font-size: 0.85em;
+            color: var(--light-text-color);
+            white-space: nowrap; /* Empêche le retour à la ligne des dates */
         }
-        .item-description {
-            margin-top: 5px;
-            padding-left: 15px;
+        .item-tasks {
+            padding-left: 20px;
             list-style-type: disc;
+            margin-top: 5px;
+            font-size: 0.9em;
         }
-        .item-description li {
+        .item-tasks li {
             margin-bottom: 3px;
         }
-        
-        /* COMPÉTENCES (Tags) */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            list-style: none;
-            padding: 0;
-        }
-        .skills-grid li {
-            background-color: var(--light-bg);
-            border: 1px solid var(--primary-color);
-            color: var(--text-color);
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-        .skills-grid li strong {
-            color: var(--primary-color);
-        }
 
-        /* BOUTON PDF (Visible uniquement sur écran) */
+        /* BOUTON PDF (Affiché en bas à droite, positionné absolument) */
         .pdf-button {
-            display: block; 
-            margin: 40px auto 0 auto;
-            padding: 12px 25px;
+            position: absolute;
+            bottom: 20px;
+            right: 25px;
+            padding: 10px 20px;
             background-color: #28a745; /* Vert pour le CTA */
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 1.1em;
+            font-size: 1em;
             cursor: pointer;
+            z-index: 10; /* Assure qu'il est au-dessus d'autres éléments */
+            transition: background-color 0.3s ease;
+        }
+        .pdf-button:hover {
+            background-color: #218838;
+        }
+        .pdf-button i {
+            margin-right: 8px;
         }
 
-        /* GESTION DE L'IMPRESSION (TRES IMPORTANT POUR LE PDF) */
+
+        /* AJUSTEMENTS POUR L'IMPRESSION (PDF) */
         @media print {
             body {
                 background-color: white !important;
-                padding: 0 !important;
+                margin: 0;
+                padding: 0;
+                display: block; /* Supprimer le flex pour éviter les marges indésirables */
             }
-            .cv-page {
+            .cv-container {
+                width: 210mm; /* Largeur A4 */
+                height: 297mm; /* Hauteur A4 */
                 box-shadow: none;
-                max-width: none;
+                margin: 0;
                 padding: 0;
                 border-radius: 0;
+                display: flex;
+                flex-direction: row; /* Important pour maintenir les colonnes */
+                page-break-after: always; /* S'assurer que le CV tient sur une page */
             }
-            header {
-                margin: 0 0 20px 0; 
-                padding: 20px 30px;
-                border-radius: 0;
+            .sidebar, .main-content {
+                padding: 25px 20px; /* Réduire légèrement le padding pour l'impression */
+            }
+            .sidebar {
+                width: 35%; /* Garder la largeur */
+                height: 100%; /* S'assurer qu'il couvre toute la hauteur */
+                overflow: hidden; /* Éviter le défilement */
+            }
+            .main-content {
+                width: 65%; /* Garder la largeur */
+                height: 100%; /* S'assurer qu'il couvre toute la hauteur */
+                overflow: hidden; /* Éviter le défilement */
             }
             .pdf-button {
                 display: none !important; /* Cache le bouton sur le PDF */
-            }
-            /* Assurer que les blocs ne sont pas coupés */
-            h2 {
-                page-break-after: avoid;
-            }
-            .item-block {
-                page-break-inside: avoid;
-            }
-            .skills-grid {
-                page-break-inside: avoid;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="cv-page">
-        <header id="cv-header"></header>
-        <div class="contact-details" id="cv-contact"></div>
-
-        <section id="cv-profil"></section>
-        <section id="cv-competences"></section>
-        <section id="cv-experiences"></section>
-        <section id="cv-formations"></section>
-
-        <button class="pdf-button" onclick="window.print()">
-            <i class="fas fa-download"></i> TÉLÉCHARGER LE CV EN PDF
-        </button>
-    </div>
-
-    <script>
-        function renderCV(data) {
-            const header = document.getElementById('cv-header');
-            const contact = document.getElementById('cv-contact');
-            const profil = document.getElementById('cv-profil');
-            const competences = document.getElementById('cv-competences');
-            const experiences = document.getElementById('cv-experiences');
-            const formations = document.getElementById('cv-formations');
-
-            // 1. EN-TÊTE
-            header.innerHTML = `
-                <h1>${data.profil.nom} ${data.profil.prenom}</h1>
-                <p>${data.profil.titre}</p>
-            `;
-
-            // 2. CONTACTS
-            contact.innerHTML = `
-                <a href="mailto:${data.profil.contact.email}"><i class="fas fa-envelope"></i> ${data.profil.contact.email}</a>
-                <a href="${data.profil.contact.linkedin}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="${data.profil.contact.github}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fas fa-map-marker-alt"></i> ${data.profil.contact.localisation}</a>
-            `;
-
-            // 3. PROFIL
-            profil.innerHTML = `
-                <h2>PROFIL & OBJECTIFS</h2>
-                <p>${data.profil.accroche}</p>
-            `;
-
-            // 4. COMPÉTENCES
-            let skillsHTML = '<h2>COMPÉTENCES TECHNIQUES</h2><ul class="skills-grid">';
-            
-            // Affichage des compétences en Infra (priorité 1)
-            skillsHTML += data.competences.infra.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
-            
-            // Affichage des réseaux/sécurité (priorité 2)
-            skillsHTML += data.competences.reseau_securite.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
-
-             // Affichage de l'automatisation (priorité 3)
-            skillsHTML += data.competences.automatisation_devops.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
-
-            // Affichage des bases/monitoring/Cloud (priorité 4)
-            skillsHTML += data.competences.base_donnees_monitoring.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
-            skillsHTML += data.competences.cloud.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
-
-            skillsHTML += '</ul>';
-            competences.innerHTML = skillsHTML;
-
-            // 5. EXPÉRIENCES
-            experiences.innerHTML = '<h2>EXPÉRIENCES PROFESSIONNELLES</h2>';
-            data.experiences.forEach(exp => {
-                const tasksList = exp.taches.map(task => `<li>${task}</li>`).join('');
-                experiences.innerHTML += `
-                    <div class="item-block">
-                        <div class="item-header">
-                            <span class="item-title">${exp.titre}</span>
-                            <span class="item-date">${exp.duree}</span>
-                        </div>
-                        <p class="item-company">${exp.entreprise}</p>
-                        <ul class="item-description">${tasksList}</ul>
-                    </div>
-                `;
-            });
-
-            // 6. FORMATION
-            formations.innerHTML = '<h2>FORMATION & CERTIFICATIONS</h2>';
-            data.formations.forEach(form => {
-                formations.innerHTML += `
-                    <div class="item-block">
-                        <div class="item-header">
-                            <span class="item-title">${form.titre}</span>
-                            <span class="item-date">${form.duree}</span>
-                        </div>
-                        <p class="item-company">${form.etablissement}</p>
-                    </div>
-                `;
-            });
-        }
-
-        // Chargement des données JSON et rendu
-        fetch('./cv-data.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Erreur de chargement de cv-data.json: ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => renderCV(data))
-            .catch(error => {
-                console.error(error);
-                document.querySelector('.cv-page').innerHTML = "<h2>Erreur de chargement des données. Veuillez vérifier le fichier cv-data.json.</h2>";
-            });
-    </script>
-</body>
-</html>
