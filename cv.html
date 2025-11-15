@@ -301,7 +301,7 @@
 
             // Contact Info (vérifie l'existence de chaque clé)
             const contactInfo = sidebar.querySelector('.contact-info');
-            // Le template littéral (backticks) gère les cas où la clé n'existe pas ou est vide
+            // Gère l'absence d'email
             contactInfo.innerHTML = `<h3><i class="fas fa-id-badge"></i> CONTACT</h3>
                 ${contact.linkedin ? `<p><i class="fab fa-linkedin"></i> <a href="${contact.linkedin}" target="_blank">LinkedIn</a></p>` : ''}
                 ${contact.github ? `<p><i class="fab fa-github"></i> <a href="${contact.github}" target="_blank">GitHub</a></p>` : ''}
@@ -365,6 +365,8 @@
             const educationSection = mainContent.querySelector('.education-section');
             educationSection.innerHTML = `<h2><i class="fas fa-graduation-cap"></i> FORMATION</h2>`;
             data.formations.forEach(form => {
+                // Changement ici : J'ai mis 'etablissement' au lieu de 'établissement'
+                // J'utilise la clé 'etablissement' qui est dans votre JSON
                 educationSection.innerHTML += `
                     <div class="education-item">
                         <div class="item-header">
