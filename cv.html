@@ -23,7 +23,7 @@
         body {
             font-family: var(--font-main);
             color: var(--text-color);
-            line-height: 1.5;
+            line-height: 1.4; /* Ligne hauteur réduite */
             margin: 0;
             padding: 0; 
             background-color: #f0f2f5; 
@@ -47,7 +47,7 @@
             width: 35%; 
             background-color: var(--primary-color);
             color: var(--header-text-color);
-            padding: 30px 25px;
+            padding: 25px 20px; /* Padding réduit (OPTIMISATION) */
             box-sizing: border-box; 
             display: flex;
             flex-direction: column;
@@ -58,8 +58,8 @@
         .sidebar h1 {
             font-family: var(--font-main);
             font-weight: 700;
-            font-size: 2.2em;
-            margin-bottom: 5px;
+            font-size: 2.1em; /* Taille réduite */
+            margin-bottom: 3px; /* Marge réduite */
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -67,18 +67,18 @@
         .sidebar h2 {
             font-family: var(--font-main);
             font-weight: 400;
-            font-size: 1.1em;
+            font-size: 1.05em; /* Taille réduite */
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 25px; /* Marge réduite */
             color: rgba(255, 255, 255, 0.9);
         }
 
         .sidebar h3 { /* Titres de section dans la sidebar */
             border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 8px;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            font-size: 1.2em;
+            padding-bottom: 6px; /* Padding réduit */
+            margin-top: 30px; /* Marge réduite (OPTIMISATION) */
+            margin-bottom: 12px; /* Marge réduite (OPTIMISATION) */
+            font-size: 1.15em; /* Taille réduite */
             text-transform: uppercase;
             letter-spacing: 0.8px;
             color: var(--header-text-color);
@@ -94,17 +94,17 @@
 
         .sidebar .contact-info p,
         .sidebar .languages p {
-            margin-bottom: 8px;
-            font-size: 0.95em;
+            margin-bottom: 6px; /* Marge réduite */
+            font-size: 0.9em; /* Taille réduite */
             display: flex;
-            align-items: flex-start; /* Alignement au début */
+            align-items: flex-start; 
         }
         .sidebar .contact-info i,
         .sidebar .languages i {
-            margin-right: 10px;
+            margin-right: 8px; /* Marge réduite */
             color: var(--secondary-color); 
-            font-size: 1.1em;
-            margin-top: 3px; /* Petit ajustement visuel */
+            font-size: 1.05em; 
+            margin-top: 2px; 
         }
         .sidebar .contact-info a {
             color: var(--header-text-color);
@@ -118,17 +118,17 @@
         .sidebar .skills-list {
             list-style: none;
             padding: 0;
-            margin-top: 10px;
+            margin-top: 8px; /* Marge réduite */
             display: flex;
             flex-wrap: wrap; 
-            gap: 5px;
+            gap: 4px; /* Gap réduit */
         }
         .sidebar .skills-list li {
             background-color: rgba(255, 255, 255, 0.1); 
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 6px 12px;
+            padding: 5px 10px; /* Padding réduit */
             border-radius: 20px;
-            font-size: 0.9em;
+            font-size: 0.85em; /* Taille réduite */
             white-space: nowrap;
         }
         .sidebar .skills-list li strong {
@@ -138,7 +138,7 @@
         /* CONTENU PRINCIPAL DROIT */
         .main-content {
             width: 65%; 
-            padding: 30px 40px;
+            padding: 25px 35px; /* Padding réduit (OPTIMISATION) */
             box-sizing: border-box;
             background-color: white;
             overflow: hidden; 
@@ -146,71 +146,69 @@
 
         .main-content h2 { 
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.4em;
+            padding-bottom: 6px; /* Padding réduit */
+            margin-top: 20px; /* Marge réduite (OPTIMISATION) */
+            margin-bottom: 12px; /* Marge réduite (OPTIMISATION) */
+            font-size: 1.3em; /* Taille réduite */
             font-weight: 600;
             color: var(--primary-color);
             display: flex;
             align-items: center;
         }
         .main-content h2:first-of-type {
-            margin-top: 0; /* Pas de marge haute pour la première section */
+            margin-top: 0; 
         }
         .main-content h2 i {
-            margin-right: 10px;
-            font-size: 1.1em;
+            margin-right: 8px; /* Marge réduite */
+            font-size: 1.05em;
             color: var(--primary-color);
         }
+        
+        /* Accroche (Profil) */
+        .profile-section p {
+            margin-bottom: 0; /* Supprimer la marge sous l'accroche */
+            font-size: 0.95em;
+        }
+
 
         /* Expériences / Formations */
         .experience-item, .education-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Marge réduite (OPTIMISATION) */
         }
         .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 2px; /* Marge réduite */
         }
         .item-title {
             font-weight: 600;
-            font-size: 1.05em;
-            color: var(--text-color);
+            font-size: 1em; /* Taille légèrement réduite */
         }
         .item-company, .item-establishment {
-            font-size: 0.95em;
-            color: var(--light-text-color);
-            margin-bottom: 5px;
+            font-size: 0.9em; /* Taille légèrement réduite */
+            margin-bottom: 3px;
         }
         .item-date {
-            font-style: italic;
-            font-size: 0.85em;
-            color: var(--light-text-color);
-            white-space: nowrap; 
+            font-size: 0.8em; /* Taille réduite */
         }
         .item-tasks {
-            padding-left: 20px;
-            list-style-type: disc;
-            margin-top: 5px;
-            font-size: 0.9em;
+            padding-left: 18px; /* Padding réduit */
+            margin-top: 3px; /* Marge réduite */
+            font-size: 0.88em; /* Taille légèrement réduite */
         }
         .item-tasks li {
-            margin-bottom: 3px;
+            margin-bottom: 0px; /* Marge minimale (OPTIMISATION) */
         }
 
         /* BOUTON PDF (Affiché en bas à droite, positionné absolument) */
         .pdf-button {
             position: absolute;
-            bottom: 20px;
-            right: 25px;
-            padding: 10px 20px;
+            bottom: 15px; /* Position ajustée */
+            right: 20px; /* Position ajustée */
+            padding: 8px 15px; /* Padding réduit */
             background-color: #28a745; 
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 4px;
+            font-size: 0.9em; /* Taille réduite */
             cursor: pointer;
             z-index: 10; 
             transition: background-color 0.3s ease;
@@ -219,7 +217,7 @@
             background-color: #218838;
         }
         .pdf-button i {
-            margin-right: 8px;
+            margin-right: 6px; 
         }
 
 
@@ -227,42 +225,24 @@
         @media print {
             body {
                 background-color: white !important;
-                margin: 0;
-                padding: 0;
-                display: block; 
+                line-height: 1.3; /* Ligne hauteur encore plus réduite pour le PDF */
             }
             .cv-container {
+                /* S'assure que le contenu est forcé dans les limites de l'A4 */
                 width: 210mm; 
                 height: 297mm; 
-                box-shadow: none;
-                margin: 0;
                 padding: 0;
-                border-radius: 0;
-                display: flex;
-                flex-direction: row; 
-                page-break-after: always; 
             }
             .sidebar, .main-content {
-                padding: 25px 20px; 
-            }
-            .sidebar {
-                width: 35%; 
-                height: 100%; 
-                overflow: hidden; 
-            }
-            .main-content {
-                width: 65%; 
-                height: 100%; 
+                padding: 20px 18px; /* Padding minimal pour l'impression */
+                height: 100%;
                 overflow: hidden; 
             }
             .pdf-button {
                 display: none !important; 
             }
-            /* Gérer les sauts de page à l'intérieur des sections */
-            h2, h3 {
-                page-break-after: avoid;
-            }
-            .experience-item, .education-item {
+            /* Assurer l'absence de coupure dans les sections */
+            h2, h3, .experience-item, .education-item {
                 page-break-inside: avoid;
             }
         }
@@ -301,8 +281,9 @@
 
             // Contact Info (vérifie l'existence de chaque clé)
             const contactInfo = sidebar.querySelector('.contact-info');
-            // Gère l'absence d'email
+            // J'ajoute l'email, il sera affiché seulement si la clé existe et a une valeur. Si vous la supprimez du JSON, elle n'apparaîtra plus.
             contactInfo.innerHTML = `<h3><i class="fas fa-id-badge"></i> CONTACT</h3>
+                ${contact.email ? `<p><i class="fas fa-envelope"></i> <a href="mailto:${contact.email}">${contact.email}</a></p>` : ''}
                 ${contact.linkedin ? `<p><i class="fab fa-linkedin"></i> <a href="${contact.linkedin}" target="_blank">LinkedIn</a></p>` : ''}
                 ${contact.github ? `<p><i class="fab fa-github"></i> <a href="${contact.github}" target="_blank">GitHub</a></p>` : ''}
                 ${contact.localisation ? `<p><i class="fas fa-map-marker-alt"></i> ${contact.localisation}</p>` : ''}
@@ -312,7 +293,6 @@
             const skillsSection = sidebar.querySelector('.skills-section');
             let skillsHTML = `<h3><i class="fas fa-cogs"></i> COMPÉTENCES</h3><ul class="skills-list">`;
             
-            // Regrouper toutes les compétences pour un affichage en tags dans la sidebar
             const allSkills = [
                 ...(data.competences.infra || []),
                 ...(data.competences.reseau_securite || []),
@@ -320,7 +300,6 @@
                 ...(data.competences.base_donnees_monitoring || []),
                 ...(data.competences.cloud || [])
             ];
-            // Utilisation de replace pour mettre en gras les mots entre ** **
             skillsHTML += allSkills.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
             skillsHTML += `</ul>`;
             skillsSection.innerHTML = skillsHTML;
@@ -365,8 +344,6 @@
             const educationSection = mainContent.querySelector('.education-section');
             educationSection.innerHTML = `<h2><i class="fas fa-graduation-cap"></i> FORMATION</h2>`;
             data.formations.forEach(form => {
-                // Changement ici : J'ai mis 'etablissement' au lieu de 'établissement'
-                // J'utilise la clé 'etablissement' qui est dans votre JSON
                 educationSection.innerHTML += `
                     <div class="education-item">
                         <div class="item-header">
@@ -390,7 +367,6 @@
             .then(data => renderCV(data))
             .catch(error => {
                 console.error(error);
-                // Message d'erreur simple en cas de problème de JSON ou de chemin
                 document.querySelector('.cv-container').innerHTML = "<div style='padding: 50px; text-align: center; color: red;'><h2>Erreur de chargement des données. Veuillez vérifier le fichier cv-data.json ou son chemin (utiliser Live Server en local).</h2></div>";
             });
     </script>
