@@ -5,7 +5,6 @@
         "titre": "INGÉNIEUR INFRASTRUCTURE & AUTOMATISATION",
         "accroche": "sysadmin avec 10 ans d'expérience dans le secteur, spécialisée en MCO/RUN/BUILD et en automatisation des systèmes critiques. Expertise solide sur l'écosystème Linux, la virtualisation, les réseaux et l'intégration de solutions Open Source (Ansible, HAProxy, Postfix, Prometheus). Axée sur la sécurité, la haute disponibilité (HA) et la simplification des opérations.",
         "contact": {
-            "email": "votre.email@exemple.com",
             "linkedin": "https://www.linkedin.com/in/l-pedrot",
             "github": "https://github.com/lorianep",
             "localisation": "Ville, France"
