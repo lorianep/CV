@@ -8,12 +8,12 @@
     
     <style>
         :root {
-            --primary-color: #007bff; /* Bleu plus profond, sobre et professionnel */
+            --primary-color: #007bff; /* Bleu profond et professionnel */
             --secondary-color: #f0f8ff; /* Bleu très clair pour le fond du bandeau */
             --text-color: #333;
             --light-text-color: #666;
             --header-text-color: #fff;
-            --font-main: 'Roboto', sans-serif; /* Police moderne et lisible */
+            --font-main: 'Roboto', sans-serif; 
             --font-alt: 'Open Sans', sans-serif;
         }
 
@@ -25,8 +25,8 @@
             color: var(--text-color);
             line-height: 1.5;
             margin: 0;
-            padding: 0; /* Padding retiré pour un meilleur contrôle du cadre */
-            background-color: #f0f2f5; /* Fond clair pour un contraste doux */
+            padding: 0; 
+            background-color: #f0f2f5; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -39,16 +39,16 @@
             height: 29.7cm; /* Format A4 */
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             background-color: white;
-            position: relative; /* Pour le positionnement absolu des éléments */
+            position: relative; 
         }
 
         /* BANDEAU LATÉRAL GAUCHE */
         .sidebar {
-            width: 35%; /* La colonne latérale occupe 35% de la largeur */
+            width: 35%; 
             background-color: var(--primary-color);
             color: var(--header-text-color);
             padding: 30px 25px;
-            box-sizing: border-box; /* Padding inclus dans la largeur */
+            box-sizing: border-box; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -89,7 +89,7 @@
         .sidebar .skills-list,
         .sidebar .languages {
             width: 100%;
-            text-align: left; /* Aligner le texte à gauche pour les listes */
+            text-align: left; 
         }
 
         .sidebar .contact-info p,
@@ -97,18 +97,19 @@
             margin-bottom: 8px;
             font-size: 0.95em;
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Alignement au début */
         }
         .sidebar .contact-info i,
         .sidebar .languages i {
             margin-right: 10px;
-            color: var(--secondary-color); /* Couleur claire pour les icônes */
+            color: var(--secondary-color); 
             font-size: 1.1em;
+            margin-top: 3px; /* Petit ajustement visuel */
         }
         .sidebar .contact-info a {
             color: var(--header-text-color);
             text-decoration: none;
-            word-break: break-all; /* Pour éviter que les longues URLs ne débordent */
+            word-break: break-all; 
         }
         .sidebar .contact-info a:hover {
             text-decoration: underline;
@@ -118,16 +119,16 @@
             list-style: none;
             padding: 0;
             margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 5px;
         }
         .sidebar .skills-list li {
-            background-color: rgba(255, 255, 255, 0.1); /* Légèrement transparent */
+            background-color: rgba(255, 255, 255, 0.1); 
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 6px 12px;
-            margin-bottom: 8px;
             border-radius: 20px;
             font-size: 0.9em;
-            display: inline-block; /* Pour un affichage en tags */
-            margin-right: 5px;
             white-space: nowrap;
         }
         .sidebar .skills-list li strong {
@@ -136,14 +137,14 @@
 
         /* CONTENU PRINCIPAL DROIT */
         .main-content {
-            width: 65%; /* Le contenu principal occupe 65% */
+            width: 65%; 
             padding: 30px 40px;
             box-sizing: border-box;
             background-color: white;
-            overflow: hidden; /* Pour gérer le contenu qui dépasse */
+            overflow: hidden; 
         }
 
-        .main-content h2 { /* Titres de section dans le contenu principal */
+        .main-content h2 { 
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 8px;
             margin-top: 25px;
@@ -153,6 +154,9 @@
             color: var(--primary-color);
             display: flex;
             align-items: center;
+        }
+        .main-content h2:first-of-type {
+            margin-top: 0; /* Pas de marge haute pour la première section */
         }
         .main-content h2 i {
             margin-right: 10px;
@@ -184,7 +188,7 @@
             font-style: italic;
             font-size: 0.85em;
             color: var(--light-text-color);
-            white-space: nowrap; /* Empêche le retour à la ligne des dates */
+            white-space: nowrap; 
         }
         .item-tasks {
             padding-left: 20px;
@@ -202,13 +206,13 @@
             bottom: 20px;
             right: 25px;
             padding: 10px 20px;
-            background-color: #28a745; /* Vert pour le CTA */
+            background-color: #28a745; 
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 1em;
             cursor: pointer;
-            z-index: 10; /* Assure qu'il est au-dessus d'autres éléments */
+            z-index: 10; 
             transition: background-color 0.3s ease;
         }
         .pdf-button:hover {
@@ -225,31 +229,168 @@
                 background-color: white !important;
                 margin: 0;
                 padding: 0;
-                display: block; /* Supprimer le flex pour éviter les marges indésirables */
+                display: block; 
             }
             .cv-container {
-                width: 210mm; /* Largeur A4 */
-                height: 297mm; /* Hauteur A4 */
+                width: 210mm; 
+                height: 297mm; 
                 box-shadow: none;
                 margin: 0;
                 padding: 0;
                 border-radius: 0;
                 display: flex;
-                flex-direction: row; /* Important pour maintenir les colonnes */
-                page-break-after: always; /* S'assurer que le CV tient sur une page */
+                flex-direction: row; 
+                page-break-after: always; 
             }
             .sidebar, .main-content {
-                padding: 25px 20px; /* Réduire légèrement le padding pour l'impression */
+                padding: 25px 20px; 
             }
             .sidebar {
-                width: 35%; /* Garder la largeur */
-                height: 100%; /* S'assurer qu'il couvre toute la hauteur */
-                overflow: hidden; /* Éviter le défilement */
+                width: 35%; 
+                height: 100%; 
+                overflow: hidden; 
             }
             .main-content {
-                width: 65%; /* Garder la largeur */
-                height: 100%; /* S'assurer qu'il couvre toute la hauteur */
-                overflow: hidden; /* Éviter le défilement */
+                width: 65%; 
+                height: 100%; 
+                overflow: hidden; 
             }
             .pdf-button {
-                display: none !important; /* Cache le bouton sur le PDF */
+                display: none !important; 
+            }
+            /* Gérer les sauts de page à l'intérieur des sections */
+            h2, h3 {
+                page-break-after: avoid;
+            }
+            .experience-item, .education-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar" id="cv-sidebar">
+            <h1></h1>
+            <h2></h2>
+            <section class="contact-info"></section>
+            <section class="skills-section"></section>
+            <section class="languages-section"></section>
+        </div>
+
+        <div class="main-content">
+            <section class="profile-section"></section>
+            <section class="experiences-section"></section>
+            <section class="education-section"></section>
+            <button class="pdf-button" onclick="window.print()">
+                <i class="fas fa-download"></i> TÉLÉCHARGER LE CV EN PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function renderCV(data) {
+            const sidebar = document.getElementById('cv-sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const contact = data.profil.contact;
+
+            // --- PARTIE GAUCHE (SIDEBAR) ---
+            // Nom et Titre
+            sidebar.querySelector('h1').innerText = `${data.profil.nom} ${data.profil.prenom}`;
+            sidebar.querySelector('h2').innerText = data.profil.titre;
+
+            // Contact Info (vérifie l'existence de chaque clé)
+            const contactInfo = sidebar.querySelector('.contact-info');
+            // Le template littéral (backticks) gère les cas où la clé n'existe pas ou est vide
+            contactInfo.innerHTML = `<h3><i class="fas fa-id-badge"></i> CONTACT</h3>
+                ${contact.linkedin ? `<p><i class="fab fa-linkedin"></i> <a href="${contact.linkedin}" target="_blank">LinkedIn</a></p>` : ''}
+                ${contact.github ? `<p><i class="fab fa-github"></i> <a href="${contact.github}" target="_blank">GitHub</a></p>` : ''}
+                ${contact.localisation ? `<p><i class="fas fa-map-marker-alt"></i> ${contact.localisation}</p>` : ''}
+            `;
+
+            // Compétences
+            const skillsSection = sidebar.querySelector('.skills-section');
+            let skillsHTML = `<h3><i class="fas fa-cogs"></i> COMPÉTENCES</h3><ul class="skills-list">`;
+            
+            // Regrouper toutes les compétences pour un affichage en tags dans la sidebar
+            const allSkills = [
+                ...(data.competences.infra || []),
+                ...(data.competences.reseau_securite || []),
+                ...(data.competences.automatisation_devops || []),
+                ...(data.competences.base_donnees_monitoring || []),
+                ...(data.competences.cloud || [])
+            ];
+            // Utilisation de replace pour mettre en gras les mots entre ** **
+            skillsHTML += allSkills.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+            skillsHTML += `</ul>`;
+            skillsSection.innerHTML = skillsHTML;
+
+            // Langues
+            const languagesSection = sidebar.querySelector('.languages-section');
+            if (data.competences.langues && data.competences.langues.length > 0) {
+                let languagesHTML = `<h3><i class="fas fa-language"></i> LANGUES</h3>`;
+                data.competences.langues.forEach(lang => {
+                    languagesHTML += `<p>${lang}</p>`;
+                });
+                languagesSection.innerHTML = languagesHTML;
+            }
+
+
+            // --- PARTIE DROITE (MAIN CONTENT) ---
+            // Profil / Accroche
+            const profileSection = mainContent.querySelector('.profile-section');
+            profileSection.innerHTML = `
+                <h2><i class="fas fa-user-circle"></i> PROFIL</h2>
+                <p>${data.profil.accroche}</p>
+            `;
+
+            // Expériences
+            const experiencesSection = mainContent.querySelector('.experiences-section');
+            experiencesSection.innerHTML = `<h2><i class="fas fa-briefcase"></i> EXPÉRIENCES PROFESSIONNELLES</h2>`;
+            data.experiences.forEach(exp => {
+                const tasksList = exp.taches ? exp.taches.map(task => `<li>${task}</li>`).join('') : '';
+                experiencesSection.innerHTML += `
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <span class="item-title">${exp.titre}</span>
+                            <span class="item-date">${exp.duree}</span>
+                        </div>
+                        <p class="item-company">${exp.entreprise}</p>
+                        ${tasksList ? `<ul class="item-tasks">${tasksList}</ul>` : ''}
+                    </div>
+                `;
+            });
+
+            // Formations
+            const educationSection = mainContent.querySelector('.education-section');
+            educationSection.innerHTML = `<h2><i class="fas fa-graduation-cap"></i> FORMATION</h2>`;
+            data.formations.forEach(form => {
+                educationSection.innerHTML += `
+                    <div class="education-item">
+                        <div class="item-header">
+                            <span class="item-title">${form.titre}</span>
+                            <span class="item-date">${form.duree}</span>
+                        </div>
+                        <p class="item-establishment">${form.etablissement}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Chargement des données JSON et rendu
+        fetch('./cv-data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur de chargement de cv-data.json: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => renderCV(data))
+            .catch(error => {
+                console.error(error);
+                // Message d'erreur simple en cas de problème de JSON ou de chemin
+                document.querySelector('.cv-container').innerHTML = "<div style='padding: 50px; text-align: center; color: red;'><h2>Erreur de chargement des données. Veuillez vérifier le fichier cv-data.json ou son chemin (utiliser Live Server en local).</h2></div>";
+            });
+    </script>
+</body>
+</html>
