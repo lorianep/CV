@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Loriane P. - Ingénieur Infra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #00bcd4; /* Bleu Cyan vif (Tech/Moderne) */
+            --text-color: #333;
+            --secondary-color: #607d8b; /* Gris-bleu pour les détails */
+            --light-bg: #f5f5f5;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--light-bg); 
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-page {
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        /* EN-TÊTE */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px 30px;
+            margin: -40px -40px 30px -40px; 
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        header h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        /* TITRES DE SECTION */
+        h2 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            font-size: 1.6em;
+            font-weight: 500;
+        }
+
+        /* CONTACTS */
+        .contact-details a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.95em;
+        }
+        .contact-details i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        /* EXPERIENCES ET FORMATION */
+        .item-block {
+            margin-bottom: 25px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+        .item-company {
+            font-style: italic;
+            font-size: 0.95em;
+            color: var(--secondary-color);
+        }
+        .item-date {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .item-description {
+            margin-top: 5px;
+            padding-left: 15px;
+            list-style-type: disc;
+        }
+        .item-description li {
+            margin-bottom: 3px;
+        }
+        
+        /* COMPÉTENCES (Tags) */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+        }
+        .skills-grid li {
+            background-color: var(--light-bg);
+            border: 1px solid var(--primary-color);
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .skills-grid li strong {
+            color: var(--primary-color);
+        }
+
+        /* BOUTON PDF (Visible uniquement sur écran) */
+        .pdf-button {
+            display: block; 
+            margin: 40px auto 0 auto;
+            padding: 12px 25px;
+            background-color: #28a745; /* Vert pour le CTA */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        /* GESTION DE L'IMPRESSION (TRES IMPORTANT POUR LE PDF) */
+        @media print {
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+            }
+            .cv-page {
+                box-shadow: none;
+                max-width: none;
+                padding: 0;
+                border-radius: 0;
+            }
+            header {
+                margin: 0 0 20px 0; 
+                padding: 20px 30px;
+                border-radius: 0;
+            }
+            .pdf-button {
+                display: none !important; /* Cache le bouton sur le PDF */
+            }
+            /* Assurer que les blocs ne sont pas coupés */
+            h2 {
+                page-break-after: avoid;
+            }
+            .item-block {
+                page-break-inside: avoid;
+            }
+            .skills-grid {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-page">
+        <header id="cv-header"></header>
+        <div class="contact-details" id="cv-contact"></div>
+
+        <section id="cv-profil"></section>
+        <section id="cv-competences"></section>
+        <section id="cv-experiences"></section>
+        <section id="cv-formations"></section>
+
+        <button class="pdf-button" onclick="window.print()">
+            <i class="fas fa-download"></i> TÉLÉCHARGER LE CV EN PDF
+        </button>
+    </div>
+
+    <script>
+        function renderCV(data) {
+            const header = document.getElementById('cv-header');
+            const contact = document.getElementById('cv-contact');
+            const profil = document.getElementById('cv-profil');
+            const competences = document.getElementById('cv-competences');
+            const experiences = document.getElementById('cv-experiences');
+            const formations = document.getElementById('cv-formations');
+
+            // 1. EN-TÊTE
+            header.innerHTML = `
+                <h1>${data.profil.nom} ${data.profil.prenom}</h1>
+                <p>${data.profil.titre}</p>
+            `;
+
+            // 2. CONTACTS
+            contact.innerHTML = `
+                <a href="mailto:${data.profil.contact.email}"><i class="fas fa-envelope"></i> ${data.profil.contact.email}</a>
+                <a href="${data.profil.contact.linkedin}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="${data.profil.contact.github}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> ${data.profil.contact.localisation}</a>
+            `;
+
+            // 3. PROFIL
+            profil.innerHTML = `
+                <h2>PROFIL & OBJECTIFS</h2>
+                <p>${data.profil.accroche}</p>
+            `;
+
+            // 4. COMPÉTENCES
+            let skillsHTML = '<h2>COMPÉTENCES TECHNIQUES</h2><ul class="skills-grid">';
+            
+            // Affichage des compétences en Infra (priorité 1)
+            skillsHTML += data.competences.infra.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+            
+            // Affichage des réseaux/sécurité (priorité 2)
+            skillsHTML += data.competences.reseau_securite.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+
+             // Affichage de l'automatisation (priorité 3)
+            skillsHTML += data.competences.automatisation_devops.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+
+            // Affichage des bases/monitoring/Cloud (priorité 4)
+            skillsHTML += data.competences.base_donnees_monitoring.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+            skillsHTML += data.competences.cloud.map(skill => `<li>${skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</li>`).join('');
+
+            skillsHTML += '</ul>';
+            competences.innerHTML = skillsHTML;
+
+            // 5. EXPÉRIENCES
+            experiences.innerHTML = '<h2>EXPÉRIENCES PROFESSIONNELLES</h2>';
+            data.experiences.forEach(exp => {
+                const tasksList = exp.taches.map(task => `<li>${task}</li>`).join('');
+                experiences.innerHTML += `
+                    <div class="item-block">
+                        <div class="item-header">
+                            <span class="item-title">${exp.titre}</span>
+                            <span class="item-date">${exp.duree}</span>
+                        </div>
+                        <p class="item-company">${exp.entreprise}</p>
+                        <ul class="item-description">${tasksList}</ul>
+                    </div>
+                `;
+            });
+
+            // 6. FORMATION
+            formations.innerHTML = '<h2>FORMATION & CERTIFICATIONS</h2>';
+            data.formations.forEach(form => {
+                formations.innerHTML += `
+                    <div class="item-block">
+                        <div class="item-header">
+                            <span class="item-title">${form.titre}</span>
+                            <span class="item-date">${form.duree}</span>
+                        </div>
+                        <p class="item-company">${form.etablissement}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Chargement des données JSON et rendu
+        fetch('./cv-data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur de chargement de cv-data.json: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => renderCV(data))
+            .catch(error => {
+                console.error(error);
+                document.querySelector('.cv-page').innerHTML = "<h2>Erreur de chargement des données. Veuillez vérifier le fichier cv-data.json.</h2>";
+            });
+    </script>
+</body>
+</html>
