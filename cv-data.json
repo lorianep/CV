@@ -1,0 +1,109 @@
+{
+    "profil": {
+        "nom": "Pédrot",
+        "prenom": "Loriane",
+        "titre": "INGÉNIEUR INFRASTRUCTURE & AUTOMATISATION",
+        "accroche": "sysadmin avec 10 ans d'expérience dans le secteur, spécialisée en MCO/RUN/BUILD et en automatisation des systèmes critiques. Expertise solide sur l'écosystème Linux, la virtualisation, les réseaux et l'intégration de solutions Open Source (Ansible, HAProxy, Postfix, Prometheus). Axée sur la sécurité, la haute disponibilité (HA) et la simplification des opérations.",
+        "contact": {
+            "linkedin": "https://www.linkedin.com/in/l-pedrot",
+            "github": "https://github.com/lorianep",
+            "localisation": "Ville, France"
+        }
+    },
+    "competences": {
+        "infra": ["ESX (VMware)", "Linux Debian", Proxmox, "VEEAM", "QNAP"],
+        "reseau_securite": ["**Fortigate**", "**HAProxy**, "Cisco", "VPN"],
+        "automatisation_devops": ["**Ansible** (Stack & Playbooks)", "Gitlab (CI/CD)",  "Docker Swarm"],
+        "base_donnees_monitoring": ["MySQL", "PostgreSQL", "Redis", "Centreon", "GrayLog"],
+        "cloud": ["GCP", "OVH Cloud"]
+    },
+    "experiences": [
+        {
+            "titre": "Administrateur Systèmes & Réseaux (MCO, RUN, BUILD)",
+            "entreprise": "Arsoé de Soual",
+            "duree": "Juillet 2023 – Avril 2025",
+            "taches": [
+                "**Migration** des pare-feu Sophos SG230 vers **Fortigate 200F**.",
+                "Mise en place d'un cluster HA de reverse proxy avec **HAProxy**.",
+                "Implémentation d'une stack d'automatisation basée sur **Ansible** et **GitLab**.",
+                "Mise en place d’un relai interne **Postfix** (Remplacement de Lotus Notes)."
+            ]
+        },
+        {
+            "titre": "Ingénieur Systèmes Linux",
+            "entreprise": "Magellium",
+            "duree": "Novembre 2022 – Juillet 2023",
+            "taches": [
+                "Maintien en Condition Opérationnelle et évolution de l'infrastructure Open Source (MCO, RUN, BUILD).",
+                "Participation à l'évolution des systèmes dans un contexte de sécurité élevé.",
+                "Technologies utilisées : **Ansible**, **Pfsense**, GCP, OVH, **GrayLog**."
+            ]
+        },
+        {
+            "titre": "Consultante Infrastructure et Automatisation",
+            "entreprise": "Davidson Consulting (Omnium Finance)",
+            "duree": "Novembre 2021 – Novembre 2022",
+            "taches": [
+                "Automatisation, BUILD, MCO et RUN de serveurs et réseaux (Linux & Windows).",
+                "Mise à jour d'un cluster **Docker Swarm**.",
+                "Bascule et mise à jour des pare-feu Fortigate (modèle 100D vers 200F).",
+                "Formations dispensées en interne sur les bases Linux & Windows."
+            ]
+        },
+        {
+            "titre": "Consultante Infrastructure (Projet Synérail)",
+            "entreprise": "Davidson Consulting (LivingObjects)",
+            "duree": "Octobre 2019 – Novembre 2021",
+            "taches": [
+                "MCO et BUILD de l’infrastructure du projet SNCF « Synérail » (supervision 24/24 & astreintes).",
+                "Mise en place d'un Plan de Reprise d'Activité (PRA).",
+                "Déploiement et gestion d’un cluster **Netapp** et d'équipements **Cisco**."
+            ]
+        },
+        {
+            "titre": "Responsable Pôle Cloud Windows & Administratrice Systèmes",
+            "entreprise": "Médiactive Network",
+            "duree": "Mars 2017 – Octobre 2019",
+            "taches": [
+                "Management d’une équipe de 5 personnes pour la partie infogérance (Janv. 2018 – Oct. 2019).",
+                "Administration systèmes et réseaux des plateformes d’hébergement (Active Directory, IIS, **Haproxy**, **NginX**, Juniper, Sophos)."
+            ]
+        },
+        {
+            "titre": "Administratrice Plateforme (Allociné)",
+            "entreprise": "Webedia",
+            "duree": "Mars 2016 – Février 2017",
+            "taches": [
+                "MCO, BUILD de la plateforme Allociné (astreintes).",
+                "Utilisation de **Puppet** pour la gestion de configuration, **Redis**, **GrayLog**."
+            ]
+        },
+             {
+            "titre": "Expériences technicien Support (2010 à 2016)",
+            "Entreprises": "Noveltis, CTS Consulting, Eurogiciel, Akka Technologies, Docteur Ordinateur",
+            "duree": "Mars 2010 – Février 2016",
+            "taches": [
+                "MCO, BUILD de la plateforme Allociné (astreintes).",
+                "Utilisation de **Puppet** pour la gestion de configuration, **Redis**, **GrayLog**."
+            ]
+        },
+      
+    ],
+    "formations": [
+        {
+          "titre": " Bac + 2 Gestionnaire de maintenance Informatique et réseaux"
+          "établissement": " Cesi, Toulouse Labège ",
+          "duree": "2012-2014"
+        },
+           {
+          "titre": " Bac Pro MMIR"
+          "établissement": " Aston école - SQLi, Toulouse ",
+          "duree": "2011-2012"
+        },
+             {
+          "titre": " Bac Spécialité commerce"
+          "établissement": " Lycée Pierre d'Aragon, Muret ",
+          "duree": "2005-2006"
+        },
+    ]
+}
