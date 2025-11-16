@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV de Loriane P. - Ingénieur Infrastructure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar" id="cv-sidebar">
+            <h1></h1>
+            <h2></h2>
+            <section class="contact-info"></section>
+            <section class="skills-section"></section>
+            <section class="languages-section"></section>
+            <section class="education-section"></section>
+        </div>
+
+        <div class="main-content">
+            <section class="profile-section"></section>
+            <section class="experiences-section"></section>
+            <button class="pdf-button" onclick="window.print()">
+                <i class="fas fa-download"></i> TÉLÉCHARGER LE CV EN PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function renderCV(data) {
+            const sidebar = document.getElementById('cv-sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const contact = data.profil.contact;
+
+            // --- PARTIE GAUCHE (SIDEBAR) ---
+            // Nom et Titre (Optimisé)
+            sidebar.querySelector('h1').innerText = `${data.profil.nom} ${data.profil.prenom}`;
+            sidebar.querySelector('h2').innerText = data.profil.titre;
+
+            // Contact Info (Compact)
+            const contactInfo = sidebar.querySelector('.contact-info');
+            contactInfo.innerHTML = `<h3><i class="fas fa-id-badge"></i> CONTACT</h3>
+                ${contact.email ? `<p><i class="fas fa-envelope"></i> <a href="mailto:${contact.email}">${contact.email}</a></p>` : ''}
+                
+                <div class="social-links">
+                    ${contact.linkedin ? `<span class="social-item"><i class="fab fa-linkedin"></i> <a href="${contact.linkedin}" target="_blank">LinkedIn</a></span>` : ''}
+                    ${contact.github ? `<span class="social-item"><i class="fab fa-github"></i> <a href="${contact.github}" target="_blank">GitHub</a></span>` : ''}
+                </div>
+                
+                ${contact.localisation ? `<p><i class="fas fa-map-marker-alt"></i> ${contact.localisation}</p>` : ''}
+            `;
+
+            // Compétences (AFFICHAGE PAR CATÉGORIE)
+            const skillsSection = sidebar.querySelector('.skills-section');
+            let skillsHTML = `<h3><i class="fas fa-cogs"></i> COMPÉTENCES</h3>`;
+
+            // Définir l'ordre et les titres français des catégories
+            const skillCategories = [
+                { key: 'infra', title: 'INFRASTRUCTURE' },
+                { key: 'reseau_securite', title: 'RÉSEAUX & SÉCURITÉ' },
+                { key: 'automatisation_devops', title: 'AUTOMATISATION & DEVOPS' },
+                { key: 'langages_prog', title: 'LANGAGES' },
+                { key: 'base_donnees_monitoring', title: 'BDD & MONITORING' },
+                { key: 'cloud', title: 'CLOUD' }
+            ];
+
+            skillCategories.forEach(category => {
+                const skills = data.competences[category.key];
+                if (skills && skills.length > 0) {
+                    skillsHTML += `<div class="skill-category">`;
+                    skillsHTML += `<h4 class="category-title">${category.title}</h4>`;
+                    
+                    // Affiche les compétences en tant que liste compacte
+                    skillsHTML += `<p class="category-list">${skills.join(' / ').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>`;
+                    
+                    skillsHTML += `</div>`;
+                }
+            });
+
+            skillsSection.innerHTML = skillsHTML;
+
+            // Langues Parlées
+            const languagesSection = sidebar.querySelector('.languages-section');
+            if (data.competences.langues && data.competences.langues.length > 0) {
+                let languagesHTML = `<h3><i class="fas fa-language"></i> LANGUES</h3>`;
+                data.competences.langues.forEach(lang => {
+                    languagesHTML += `<p>${lang}</p>`;
+                });
+                languagesSection.innerHTML = languagesHTML;
+            }
+
+            // Formations (Déplacées dans la sidebar et compactées)
+            const educationSection = sidebar.querySelector('.education-section');
+            educationSection.innerHTML = `<h3><i class="fas fa-graduation-cap"></i> FORMATIONS</h3>`;
+            
+            data.formations.forEach(form => {
+                educationSection.innerHTML += `
+                    <div>
+                        <span class="edu-title">${form.titre}</span>
+                        <span class="edu-meta">${form.etablissement} (${form.duree})</span>
+                    </div>
+                `;
+            });
+
+
+            // --- PARTIE DROITE (MAIN CONTENT) ---
+            // Profil / Accroche
+            const profileSection = mainContent.querySelector('.profile-section');
+            profileSection.innerHTML = `
+                <h2><i class="fas fa-user-circle"></i> PROFIL</h2>
+                <p>${data.profil.accroche}</p>
+            `;
+
+            // Expériences (STYLE TIMELINE DÉCALÉE)
+            const experiencesSection = mainContent.querySelector('.experiences-section');
+            experiencesSection.innerHTML = `<h2><i class="fas fa-briefcase"></i> EXPÉRIENCES PROFESSIONNELLES</h2>`;
+            
+            data.experiences.forEach(exp => {
+                // Utilise la clé 'description' (obligatoire pour ce style)
+                const description = exp.description || 'Description non fournie.';
+                
+                experiencesSection.innerHTML += `
+                    <div class="experience-item">
+                        
+                        <div class="item-meta"> <p class="item-company">${exp.entreprise}</p>
+                            <p class="item-date">${exp.duree}</p>
+                        </div>
+
+                        <div class="item-content"> <h3 class="item-title">${exp.titre}</h3>
+                            <p class="item-description">${description}</p>
+                        </div>
+
+                    </div>
+                `;
+            });
+        }
+
+        // Chargement des données JSON et rendu
+        fetch('./cv-data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur de chargement de cv-data.json: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => renderCV(data))
+            .catch(error => {
+                console.error(error);
+                document.querySelector('.cv-container').innerHTML = "<div style='padding: 50px; text-align: center; color: red;'><h2>Erreur de chargement des données. Veuillez vérifier le fichier cv-data.json ou son chemin.</h2></div>";
+            });
+    </script>
+</body>
+</html>
