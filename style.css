@@ -12,6 +12,7 @@
 /* --- GLOBAL ET CONTENEUR A4 --- */
 body {
     font-family: var(--font-main);
+    font-size: 11px;
     color: var(--text-color);
     line-height: 1.4; 
     margin: 0;
@@ -21,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
 }
 
 .cv-container {
@@ -49,7 +51,7 @@ body {
 .sidebar h1 {
     font-family: var(--font-main);
     font-weight: 700;
-    font-size: 1.8em; 
+    font-size: 1.7em; 
     margin-bottom: 1px; 
     text-transform: uppercase;
 }
@@ -117,7 +119,13 @@ body {
 }
 .skill-category {
     margin-bottom: 5px; 
+    margin-top: 5px;
 }
+.languages-section {
+    width: 100%;
+    text-align: left;
+}
+
 .category-title {
     font-size: 0.85em; 
     font-weight: 700;
