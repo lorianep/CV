@@ -12,7 +12,7 @@
 /* --- GLOBAL ET CONTENEUR A4 --- */
 body {
     font-family: var(--font-main);
-    font-size: 11px;
+    font-size: 14px;
     color: var(--text-color);
     line-height: 1.4; 
     margin: 0;
