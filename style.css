@@ -254,9 +254,11 @@ body {
 
 /* --- BOUTON ET IMPRESSION --- */
 .pdf-button {
-    position: absolute;
-    bottom: 15px; 
-    right: 20px; 
+    /* Bouton dl CV */
+    position: fixed; 
+    top: 50%; 
+    left: 20px; 
+    transform: translateY(-50%); 
     padding: 8px 15px; 
     background-color: #28a745; 
     color: white;
@@ -264,6 +266,8 @@ body {
     border-radius: 4px;
     font-size: 0.9em; 
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+    z-index: 1000; 
 }
 
 @media print {
