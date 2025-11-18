@@ -6,8 +6,8 @@
         "accroche": "10 ans d'expérience dans le secteur, actuellement en montée de compétence sur l'IAC. Motivée par l'automatisation, j'aime transformer le chaos en architecture stable et sécurisée.",
         "contact": {
             "email": "loriane.pedrot@email.com",
-            "linkedin": "https://www.linkedin.com/in/loriane-pedrot",
-            "github": "https://github.com/loriane-dev",
+            "linkedin": "https://www.linkedin.com/in/l-pedrot/",
+            "github": "https://github.com/lorianep",
             "localisation": "France"
         }
     },
@@ -42,43 +42,43 @@
             "titre": "Administrateur Systèmes & Réseaux",
             "entreprise": "Arsoé de Soual - Soual",
             "duree": "Juillet 2023 – Avril 2025",
-            "description": "Responsable de la migration des pare-feu (Sophos SG230 vers Fortigate 200F), mise en place d'un cluster HAProxy pour la haute-disponibilité. Automatisation de l'infrastructure via Ansible et CI/CD GitLab. Environnement critique de 200 VMs."
+            "description": "Dans une équipe de 3 personnes, ~ 150 serveurs, Migration des pare-feu obsolètes, Mise en place d'un cluster HA LB HAProxy & Automatisation via Ansible ."
         },
         {
             "titre": "Ingénieur Systèmes Linux",
             "entreprise": "Magellium - Toulouse Labège",
             "duree": "Novembre 2022 – Juillet 2023",
-            "description": "Gestion complète de l'infrastructure virtuelle Linux (1500 VMs). Participation active à l'évolution des systèmes dans un contexte de sécurité élevé, assurant la performance et la fiabilité."
+            "description": "Gestion de l'infrastructure dans une équipe de 4 personnes, parc ~ 1500 serveurs avec un contexte de sécurité élevé ( partenariat avec des organismes PCI DSS ) .Environnement Vmware, Nutanix, GCP Azure Linux, Docker"
         },
         {
             "titre": "Consultante Infrastructure et Automatisation",
             "entreprise": "Davidson Consulting (Omnium Finance)",
             "duree": "Novembre 2021 – Novembre 2022",
-            "description": "Missions d'automatisation, BUILD, MCO et RUN de serveurs et réseaux (Linux & Windows). Mise en place d'un cluster Docker Swarm et de pare-feu Fortigate. Formations dispensées en interne sur les bases Linux & Windows."
+            "description": "Gestion d'une infrastructure Linux & Windows ~ 100 serveurs. Formations dispensées en interne sur les bases Linux & Windows ( powersehll/bash , débug avancé ). Environnement : Docker Swarm, Azure" 
         },
         {
             "titre": "Consultante Infrastructure (Projet Synérail)",
             "entreprise": "Davidson Consulting (LivingObjects)",
             "duree": "Octobre 2019 – Novembre 2021",
-            "description": "MCO et BUILD de l'infrastructure du projet SNCF « Synérail » (supervision 24/24 & astreintes). Mise en place d'un Plan de Reprise d'Activité (PRA). Déploiement et gestion d'un cluster Netapp et d'équipements Cisco."
+            "description": "Dans une équipe de 6 personnes, sur le projet SNCF « Synérail » (Supervision 24/24 & Astreintes). Mise en place d'un PRA,. Déploiement et gestion d'un cluster Netapp."
         },
         {
             "titre": "Responsable Pôle Cloud Windows & Administratrice Systèmes",
             "entreprise": "Médiactive Network",
             "duree": "Mars 2017 – Octobre 2019",
-            "description": "Management d'une équipe de 5 personnes pour la partie infogérance. Administration systèmes et réseaux des plateformes d'hébergement (Active Directory, IIS, Haproxy, Nginx, Juniper, Sophos)."
+            "description": "Management d'une équipe de 5 personnes . Administration systèmes et réseaux des plateformes d'hébergement (Linux, Bind, Xen, Active Directory, IIS, Haproxy, Nginx, Juniper, Sophos)."
         },
         {
-            "titre": "Administratrice Plateforme (Allociné)",
+            "titre": "Administratrice Plateforme Allociné",
             "entreprise": "Webedia",
             "duree": "Mars 2016 – Février 2017",
-            "description": "MCO et BUILD de la plateforme Allociné (astreintes). Utilisation de Puppet pour la gestion de configuration, Redis et GrayLog."
+            "description": "Dans une équipe de 5 personnes infrastructure de  ~ 200 Vms, MCO et BUILD de la plateforme Allociné avec astreintes 7j/7. Environnement: Linux Apache, Nginx, Haproxy GrayLog, Bind  Redis et GrayLog."
         },
         {
-            "titre": "Expertes technicien Support (2010 à 2016)",
-            "entreprise": "Noveltis, CTS Consulting, Eurogiciel, Akka Technologies, Docteur Ordinateur",
+            "titre": "Expériences en tant que technicien Support (2010 à 2016)",
+            "entreprise": "Entreprises : Docteur Ordinateur - Akka Technologies -  Noveltis - CTS Consulting - Eurogiciel",
             "duree": "Mars 2010 – Février 2016",
-            "description": "Gestion de Parc, Support N1, MCO & N2 Windows/Linux, Supervision pour divers clients (Défense, Finance, etc.)."
+            "description": "Support N1 N2, Gestion de Parc, Supervision de base, Gestion réseau."
         }
     ]
 }
