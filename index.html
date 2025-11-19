@@ -58,23 +58,34 @@
 
             // Définir l'ordre et les titres français des catégories
             const skillCategories = [
-                { key: 'infra', title: 'INFRASTRUCTURE' },
-                { key: 'reseau_securite', title: 'RÉSEAUX & SÉCURITÉ' },
-                { key: 'automatisation_devops', title: 'AUTOMATISATION & DEVOPS' },
-                { key: 'langages_prog', title: 'LANGAGES' },
-                { key: 'base_donnees_monitoring', title: 'BDD & MONITORING' },
-                { key: 'cloud', title: 'CLOUD' }
+                { key: 'infra', title: 'INFRASTRUCTURE', icon: 'fa-server' }, 
+                { key: 'reseau_securite', title: 'RÉSEAUX & SÉCURITÉ', icon: 'fa-shield-alt' },
+                { key: 'automatisation_devops', title: 'AUTOMATISATION & DEVOPS', icon: 'fa-robot' },
+                { key: 'langages_prog', title: 'LANGAGES', icon: 'fa-code' },
+                { key: 'base_donnees_monitoring', title: 'BDD & MONITORING', icon: 'fa-database' },
+                { key: 'cloud', title: 'CLOUD', icon: 'fa-cloud' }
             ];
 
             skillCategories.forEach(category => {
                 const skills = data.competences[category.key];
                 if (skills && skills.length > 0) {
                     skillsHTML += `<div class="skill-category">`;
-                    skillsHTML += `<h4 class="category-title">${category.title}</h4>`;
+                        skillsHTML += `<h4 class="category-title"><i class="fas ${category.icon}"></i> ${category.title}</h4>`;
                     
                     // Affiche les compétences en tant que liste compacte
-                    skillsHTML += `<p class="category-list">${skills.join(' / ').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>`;
-                    
+                    //skillsHTML += `<p class="category-list">${skills.join(' / ').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>`;
+                    // NOUVEAU BLOC : Génération d'une liste (<ul>) de tags (<li>)
+            skillsHTML += `<ul class="skill-tags">`; 
+
+            skills.forEach(skill => {
+                // 1. Applique le formatage gras (s'il y a des doubles étoiles)
+                const formattedSkill = skill.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                
+                // 2. Ajoute chaque compétence comme un élément de liste
+                skillsHTML += `<li>${formattedSkill}</li>`;
+            });
+
+            skillsHTML += `</ul>`;
                     skillsHTML += `</div>`;
                 }
             });

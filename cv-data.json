@@ -3,9 +3,9 @@
         "nom": "PÉDROT",
         "prenom": "LORIANE",
         "titre": "Ingénieur Infrastructure / Automatisation (IAC)",
-        "accroche": "10 ans d'expérience dans le secteur, j'aime transformer le chaos en architecture stable et sécurisée.",
+        "accroche": "10 ans d'expérience dans le secteur, j'aime standardiser, automatiser  & et systématiser les bonnes pratiques via le code.",
         "contact": {
-            "email": "loriane.pedrot@email.com",
+            "email": "loripe@proton.me",
             "linkedin": "https://www.linkedin.com/in/l-pedrot/",
             "github": "https://github.com/lorianep",
             "localisation": "France"
@@ -23,7 +23,7 @@
     },
     "formations": [
         {
-            "titre": "Bac + 2 Gestionnaire de maintenance informatique et réseaux",
+            "titre": "Bac + 2 GMSI",
             "etablissement": "Cesi, Toulouse Labège",
             "duree": "2012-2014"
         },
@@ -83,7 +83,7 @@
         },
         {
             "titre": "Expériences en tant que technicien Support (2010 à 2016)",
-            "entreprise": "Entreprises : Docteur Ordinateur - Akka Technologies -  Noveltis - CTS Consulting - Eurogiciel",
+            "entreprise": "Dr.Ordinateur, Akka Technologies, Noveltis, Eurogiciel, CTS Consulting ",
             "duree": "Mars 2010 – Février 2016",
             "description": "Support N1 N2, Gestion de Parc, Supervision de base, Gestion réseau."
         }
