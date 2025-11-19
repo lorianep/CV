@@ -2,7 +2,7 @@
     "profil": {
         "nom": "PÉDROT",
         "prenom": "LORIANE",
-        "titre": "Ingénieur Systèmes Linux / Infrastructures as Code",
+        "titre": "Ingénieur Infrastructure / Automatisation (IAC)",
         "accroche": "10 ans d'expérience dans le secteur, Motivée par l'automatisation, j'aime transformer le chaos en architecture stable et sécurisée.",
         "contact": {
             "email": "loriane.pedrot@email.com",
@@ -12,9 +12,10 @@
         }
     },
     "competences": {
-        "infra": ["ESX (VMware)", "Linux Debian/Ubuntu", "Proxmox", "VEEAM", "QNAP"],
+        "infra": ["ESX (VMware)", "Linux Debian/Ubuntu", "Proxmox", "VEEAM"],
+        "automatisation_devops": ["Ansible","CloudInit", "Gitlab (CI/CD)", "Docker Swarm"],
         "reseau_securite": ["Fortigate", "HAProxy", "Cisco", "VPN"],
-        "automatisation_devops": ["**Ansible** (Stack & Playbooks)", "Gitlab (CI/CD)", "Docker Swarm"],
+        "automatisation_devops": ["Ansible","CloudInit", "Gitlab (CI/CD)", "Docker Swarm"],
         "base_donnees_monitoring": ["MySQL", "PostgreSQL", "Redis", "Centreon", "GrayLog"],
         "cloud": ["GCP", "OVH Cloud"],
         "langages_prog": ["Python (Scripting)", "Bash / Shell", "Powershell"],
@@ -38,6 +39,12 @@
         }
     ],
     "experiences": [
+        {
+            "titre": "Ingénieur système Linux",
+            "entreprise": "Neogeo - Toulouse",
+            "duree": "Mai 2025 – Maintenant",
+            "description": "En autonomie avec les équipes de développement sur un parc ~ 1200 serveurs,  Implémentation IAC,Durcissement de la sécurité & fiabilisation des montées de versions des infra obsolètes."
+        },
         {
             "titre": "Administrateur Systèmes & Réseaux",
             "entreprise": "Arsoé de Soual - Soual",
